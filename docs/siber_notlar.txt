@@ -1,0 +1,5 @@
+Marmara Üniversitesi Siber Güvenlik Kulübü, 2026 yılı bahar döneminde 5 büyük CTF yarışması düzenlemiştir. Bu yarışmalara toplamda 300'den fazla öğrenci katılım göstermiştir.
+
+Kulübün haftalık eğitimleri her Salı ve Perşembe günleri Mühendislik Fakültesi laboratuvarlarında yapılmaktadır. Eğitimlerde web güvenliği, tersine mühendislik ve ağ güvenliği gibi konular işlenmektedir.
+
+Yönetim kurulu toplantıları her ayın ilk Cuma günü yapılmakta olup, yeni etkinlik fikirleri ve sponsorluk görüşmeleri bu toplantılarda karara bağlanır. Kulübe üye olmak isteyen öğrencilerin dönem başında açılan başvuru formunu doldurmaları gerekmektedir.
