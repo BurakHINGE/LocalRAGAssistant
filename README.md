@@ -32,7 +32,7 @@ The pipeline consists of three main stages:
 ## ⚙️ Setup & Run
 ### 1. Clone the repo and create a virtual environment
 ```bash
-git clone [https://github.com/YOUR_USERNAME/LocalRagAssistant.git](https://github.com/YOUR_USERNAME/LocalRagAssistant.git)
+git clone https://github.com/BurakHINGE/LocalRagAssistant.git
 cd LocalRagAssistant
 python3 -m venv venv
 source venv/bin/activate  # For macOS/Linux
@@ -55,13 +55,6 @@ Run the main app to start chatting via CLI:
 ```bash
 python3 app.py
 ```
-
----
-
-## ⏱️ Performance Metrics (Apple Silicon)
-•	Direct information retrieval: **~0.74 seconds**
-•	Logical deduction queries: **~1.09 seconds**
-•	Out-of-context edge cases (Refusals): **~0.38 seconds**
 
 ---
 
@@ -102,7 +95,7 @@ Proje üç temel yapıtaşından oluşmaktadır:
 ## ⚙️ Kurulum ve Çalıştırma
 ### 1. Depoyu Klonlayın ve Sanal Ortam Oluşturun
 ```bash
-git clone [https://github.com/KULLANICI_ADINIZ/LocalRagAssistant.git](https://github.com/KULLANICI_ADINIZ/LocalRagAssistant.git)
+git clone https://github.com/BurakHINGE/LocalRagAssistant.git
 cd LocalRagAssistant
 python3 -m venv venv
 source venv/bin/activate  # macOS/Linux için
