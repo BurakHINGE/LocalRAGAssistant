@@ -1,27 +1,26 @@
 # 🚀 Local RAG AI Assistant
+*(Scroll down for the Turkish version / Türkçe versiyon için aşağı kaydırın)*
 
----
+**Completely Offline, Privacy-First, Zero-Hallucination Q&A Agent**
 
-## Completely Offline, Privacy-First, Zero-Hallucination Q&A Agent
 This project is a completely offline Retrieval-Augmented Generation (RAG) assistant that runs locally on your device without any internet connection. Built with Microsoft Foundry Local, it allows you to query your local documents (PDFs, text files, notes) securely using your device's CPU/NPU resources.
 
 ## ✨ Key Features
-•	🔒 **100% Offline & Secure:** No data is sent to cloud servers or third-party APIs. All inference happens locally.
-•	🧠 **Zero Hallucination:** Thanks to the RAG architecture and a strict System Prompt, the model does not fabricate answers. If the information is not in the database, it clearly states: "I do not have this information."
-•	⚡ **High Performance:** Optimized inference times averaging ~0.5 - 1.5 seconds per query.
-•	🗄️ **Lightweight Database:** Uses embedded SQLite for vector (Embedding) storage and Cosine Similarity calculations without needing an external vector database server.
-•	🛡️ **Error Handling:** Robust CLI interface protected against empty or nonsensical user inputs.
-
----
+* 🔒 **100% Offline & Secure:** No data is sent to cloud servers or third-party APIs. All inference happens locally.
+* 🧠 **Zero Hallucination:** Thanks to the RAG architecture and a strict System Prompt, the model does not fabricate answers. If the information is not in the database, it clearly states: "I do not have this information."
+* ⚡ **High Performance:** Optimized inference times averaging **~0.5 - 1.5 seconds** per query.
+* 🗄️ **Lightweight Database:** Uses embedded `SQLite` for vector (Embedding) storage and Cosine Similarity calculations without needing an external vector database server.
+* 🛡️ **Error Handling:** Robust CLI interface protected against empty or nonsensical user inputs.
 
 ## 🏗️ Architecture & Tech Stack
 The pipeline consists of three main stages:
-	1.	**Data Ingestion:** Documents are chunked, converted to embeddings using qwen3-embedding-0.6b, and stored in SQLite via ingest.py.
-	2.	**Retrieval:** User queries are vectorized and compared against stored vectors using Cosine Similarity to fetch the most relevant context.
-	3.	**Generation:** The retrieved context is fed into the phi-3.5-mini Small Language Model (SLM) to generate a grounded response.
-•	**Language:** Python 3.11+
-•	**Models:** qwen3-embedding-0.6b (Embedding), phi-3.5-mini (Chat)
-•	**Libraries:** foundry-local-sdk, sqlite3, time
+1. **Data Ingestion:** Documents are chunked, converted to embeddings using `qwen3-embedding-0.6b`, and stored in SQLite via `ingest.py`.
+2. **Retrieval:** User queries are vectorized and compared against stored vectors using Cosine Similarity to fetch the most relevant context.
+3. **Generation:** The retrieved context is fed into the `phi-3.5-mini` Small Language Model (SLM) to generate a grounded response.
+
+* **Language:** Python 3.11+
+* **Models:** `qwen3-embedding-0.6b` (Embedding), `phi-3.5-mini` (Chat)
+* **Libraries:** `foundry-local-sdk`, `sqlite3`, `time`
 
 ---
 
