@@ -1,9 +1,11 @@
+import time
 import sqlite3
 import json
 import math
 from foundry_local_sdk import Configuration, FoundryLocalManager
 
 def cosine_similarity(vec1, vec2):
+    
     dot_product = sum(a * b for a, b in zip(vec1, vec2))
     magnitude1 = math.sqrt(sum(a * a for a in vec1))
     magnitude2 = math.sqrt(sum(b * b for b in vec2))
@@ -57,12 +59,23 @@ def main():
     
     # Sürekli sohbet döngüsü (CLI Arayüzü)
     while True:
-        user_input = input("\nSen: ")
-        if user_input.lower() in ['q', 'çıkış', 'quit', 'exit']:
-            print("Asistan kapatılıyor. Görüşmek üzere!")
+        user_input = input("Sen: ")
+
+        # 1. Girdi Doğrulama Kontrolü (Boş veya sadece boşluktan oluşan girdileri yakalar)
+        if not user_input.strip():
+            print("🤖 Asistan: Lütfen geçerli bir soru sorun.\n")
+            continue  # Döngünün başına döner, programın çökmesini engeller
+
+        # 2. Çıkış Kontrolü
+        if user_input.lower() in ['q', 'çıkış']:
+            print("🤖 Asistan: Görüşmek üzere!")
             break
             
+        # Kullanıcı girdisi (user_input) doğrulandıktan hemen sonra...
         print("🤖 Asistan düşünüyor (veritabanı taranıyor)...")
+        
+        # Sayacı başlat
+        start_time = time.time()
         
         # Soruyu arama motoruna gönderip en alakalı parçaları buluyoruz
         top_chunks = get_top_chunks(user_input, embed_client)
@@ -85,7 +98,13 @@ Context:
             {"role": "user", "content": user_input}
         ])
         
+        # Sayacı durdur ve geçen süreyi hesapla
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        
+        # Cevabı ve geçen süreyi ekrana bas
         print(f"\n🤖 Asistan: {response.choices[0].message.content}")
+        print(f"⏱️ [Bilgi] Bu cevap {elapsed_time:.2f} saniyede üretildi.\n")
 
 if __name__ == "__main__":
     main()
