@@ -10,7 +10,7 @@ httpcore==1.0.9
 httpx==0.28.1
 idna==3.18
 jiter==0.16.0
-onnxruntime-core==1.26.0
+onnxruntime==1.26.0
 onnxruntime-genai-core==0.14.1
 openai==2.44.0
 pydantic==2.13.4
